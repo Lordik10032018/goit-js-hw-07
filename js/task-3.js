@@ -1,32 +1,15 @@
 'use strict'
-class StringBuilder {
-  #value;
-  constructor(initialValue) {
-    this.#value = initialValue;
-  }
 
-  getValue() {
-    return this.#value;
-  }
+const strokeFormElem = document.querySelector('input[id="name-input"]');
+const spanFormElem = document.querySelector('span[id="name-output"]')
+strokeFormElem.addEventListener('input', handleStrokeFormElemInput)
 
-  padEnd(str) {
-    this.#value = this.#value + str;
-  }
-
-  padStart(str) {
-    this.#value = str + this.#value;
-  }
-
-  padBoth(str) {
-    this.#value = str + this.#value + str;
-  }
+function handleStrokeFormElemInput() {
+    const strokeValue = strokeFormElem.value.trim();
+    if (strokeValue.length < 1) {
+        spanFormElem.textContent = 'Anonymous';
+    } else {
+        spanFormElem.textContent = strokeValue
+    }
 }
 
-const builder = new StringBuilder(".");
-console.log(builder.getValue()); // "."
-builder.padStart("^");
-console.log(builder.getValue()); // "^."
-builder.padEnd("^");
-console.log(builder.getValue()); // "^.^"
-builder.padBoth("=");
-console.log(builder.getValue()); // "=^.^="
