@@ -38,4 +38,4 @@ function totalMarkup(array) {
 }
 
 const result = totalMarkup(images);
-listGalleryElem.innerHTML = result
+listGalleryElem.insertAdjacentHTML('afterbegin', result);
