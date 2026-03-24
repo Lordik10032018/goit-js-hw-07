@@ -11,10 +11,15 @@ function hexToRgb(hex) {
   const b = parseInt(hex.slice(5, 7), 16);
   return `rgb(${r}, ${g}, ${b})`;
 }
-
+const widgetElem = document.querySelector('.widget')
 const bodyElem = document.querySelector('body');
+const textElem = widgetElem.querySelector('p')
+
 const widgeetBtnElem = document.querySelector('.change-color');
 const widgetSpanElem = document.querySelector('.color');
+
+textElem.classList.add('widget-text')
+widgeetBtnElem.classList.add('widget-btn')
 
 widgeetBtnElem.addEventListener('click', handleWidgetBtnClick)
 function handleWidgetBtnClick() {
