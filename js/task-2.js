@@ -34,7 +34,7 @@ function markup(obj) {
 }
 
 function totalMarkup(array) {
-  return array.map(markup);
+  return array.map(markup).join('');
 }
 
 const result = totalMarkup(images);

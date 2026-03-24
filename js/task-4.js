@@ -23,14 +23,17 @@ function handleFormElemSubmit(event) {
     // checking -------------------
     const email = refs.email.length;
     const password = refs.password.length;
-    const check = email >= 5 && password >= 5;
+    const check = email >= 1 && password >= 1;
     if (!(check)) {
         alert('All form fields must be filled in')
-    } else {console.log(refs)}
+    } else {
+        console.log(refs);
+        formElem.reset()
+    }
     // checking end -------------------
 
     
-    formElem.reset()
+    
 }
 
 
